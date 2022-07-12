@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Noto Naskh Arabic', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0 16px;
+    position: relative;
+    min-height: 100%;
+}
+
+body.popup {
+    overflow: hidden;
+}
+
+.bg {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient( to bottom left, #506675, #161a2a);
+}
+
+.bg:nth-child(2) {
+    background: url(./assets/bg.png) center center no-repeat;
+    background-size: cover;
+    opacity: .2;
+    filter: blur(2px);
+}
+
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.44);
+    z-index: 10;
+    display: grid;
+    place-content: center;
+}
+
+.dialog {
+    direction: rtl;
+    width: 80vw;
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.dialog-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url(./assets/bg.png) center center no-repeat;
+    background-size: cover;
+    opacity: .05;
+}
+
+.close-dialog {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    padding: 0;
+}
+
+.close-dialog svg {
+    width: 100%;
+    height: 100%;
+    fill: #506675;
+}
+
+.dialog .title {
+    color: #161a2a;
+}
+
+.popup-content {
+    text-align: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 2fr 1fr;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.right {
+    padding: 16px;
+    display: grid;
+    align-content: center;
+}
+
+.left {
+    /* width: 33%; */
+    overflow: hidden;
+}
+
+.right,
+.left {
+    height: 100%;
+}
+
+.doaa {
+    font-size: larger;
+    padding: 0 48px;
+    color: #161a2a;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+}
+
+header {
+    text-align: center;
+}
+
+.title {
+    font-size: 48px;
+    margin: 12px 0;
+    margin-bottom: 0;
+    color: white;
+}
+
+.subtitle {
+    font-size: 24px;
+    margin: 0;
+    color: #8e9cb7;
+}
+
+input {
+    max-width: 600px;
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-family: inherit;
+    line-height: normal;
+    direction: rtl;
+    position: relative;
+    line-height: 0%;
+    margin: 0 auto;
+    display: block;
+    background: transparent;
+    border: 2px solid #506675;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+main {
+    direction: rtl;
+    padding: 16px 0;
+    max-width: 1024px;
+    margin: 16px auto;
+    border-radius: 4px;
+}
+
+ul {
+    color: white;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+*.hide {
+    display: none;
+    visibility: hidden;
+}
+
+li {
+    background: #5066753d;
+    cursor: pointer;
+}
+
+.tag {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    line-height: 1;
+    border-radius: 4px;
+    color: white;
+}
+
+li:nth-child(even):is(:not(.hide)) {
+    background: transparent;
+}
+
+.tag span {
+    color: white;
+}
+
+.tag:visited {
+    color: initial;
+}
+
+li {
+    list-style: none;
+}
+
+.section-header {
+    display: grid;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    align-items: center;
+    color: white;
+}
+
+.section-title {
+    margin: 0;
+}
+
+section {
+    direction: rtl;
+    max-width: 900px;
+    width: 100%;
+    font-size: larger;
+    position: relative;
+    margin: auto;
+    margin-top: 16px;
+    color: white;
+}
+
+.back {
+    border-radius: 50%;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    padding: 0;
+    place-content: center;
+    border: none;
+    background: none;
+}
+
+.back svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 8px 16px;
+    margin-top: auto;
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .dialog {
+        width: 90%;
+        margin: auto;
+    }
+    .popup-content {
+        grid-auto-flow: row;
+        grid-template-columns: none;
+    }
+    .left {
+        display: none;
+    }
+}
