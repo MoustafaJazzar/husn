@@ -62,7 +62,8 @@ backBtn.addEventListener('click', () => {
     athkarSection.classList.add('hide');
 })
 
-closeDialogBtn.addEventListener('click', () => {
+let closeDialog = () => {
     document.body.classList.remove('popup');
     document.querySelector('.intro').remove()
-})
+}
+closeDialogBtn.addEventListener('click', closeDialog)
